@@ -1,11 +1,11 @@
 const express = require('express')
 const userControllar = require('../Controlar/userControlar')
-const authControlar = require('../Controlar/authControlar')
+// const authControlar = require('../Controlar/authControlar')
 
 const router = express.Router()
 
-router.post('/signup' , authControlar.signup)
-router.post('/login' , authControlar.login)
+// router.post('/signup' , authControlar.signup)
+// router.post('/login' , authControlar.login)
 
 router
 .route('/')
