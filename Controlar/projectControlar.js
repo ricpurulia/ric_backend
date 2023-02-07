@@ -1,5 +1,5 @@
 
-const Artical = require('./../model/articalModel')
+const Artical = require('../model/projectModel')
 
 exports.getAllproject=async(req,res,next)=>{
     const artical = await Artical.find(req.query)
