@@ -30,7 +30,7 @@ exports.getProject = async (req, res) => {
 
     if (project == null) {
       res.status(404).json({
-        mas: "Alumni not found",
+        mas: "project not found",
         sucess: false,
       });
     }
@@ -52,7 +52,7 @@ exports.addProject = async (req, res) => {
     const project = await Project.create(newdata);
     res.status(201).json(project);
   } catch (err) {
-    res.status(500).json({ mas: "some server error" });
+    res.status(500).json(err);
   }
 };
 

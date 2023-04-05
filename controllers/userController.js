@@ -13,10 +13,19 @@ exports.getAllUsers = async (req, res, next) => {
     });
 };
 
-exports.getUser = (req, res) => {
-    res.status(500).json({
-      status: 'error',
-      message: 'This route is not yet defined!'
+exports.getUser = async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+    if (user == null) {
+      res.status(404).json({
+        mas: "user not found",
+        sucess: false,
+      });
+    }
+    res.status(200).json({
+      user,
+      sucess: true,
+      authUser: req.userId,
     });
 };
 exports.createUser = async (req, res) => {

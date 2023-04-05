@@ -15,11 +15,11 @@ const userSchema = new mongoose.Schema(
         },
         image:{
             type:String,
-            require : [true , "image is required"],
+            // require : [true , "image is required"],
         },
         phNo:{
             type:Number,
-            require : [true , "Number is required"],
+            // require : [true , "Number is required"],
         },
         year:{
             type:String,
