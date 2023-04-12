@@ -6,6 +6,8 @@ const app = require("./app")
 
 const DB = `mongodb+srv://ric:ric@cluster0.miau4pq.mongodb.net/ric?retryWrites=true&w=majority`
 
+
+
 mongoose .connect(DB).then(() => {
 console.log('connection successfull')
 })

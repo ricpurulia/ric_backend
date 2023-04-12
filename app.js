@@ -4,6 +4,7 @@ const cors= require('cors')
 const projectRoute= require('./routes/projectRoute')
 const userRoute= require('./routes/userRoute')
 const eventRouter = require('./routes/eventRoute')
+const contactRouter = require('./routes/contactusRoute')
 
 const app = express();
 
@@ -18,7 +19,8 @@ app.get('/', (req,res)=>{
 
 app.use('/api/allproject', projectRoute)
 app.use('/api/alluser' , userRoute)
-app.use('/api/getAllEvent',eventRouter)
+app.use('/api/allevent',eventRouter)
+app.use('/api/contactus',contactRouter)
 
 
 
