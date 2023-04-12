@@ -8,9 +8,9 @@ const DB = `mongodb+srv://ric:ric@cluster0.miau4pq.mongodb.net/ric?retryWrites=t
 
 
 
-mongoose .connect(DB).then(() => {
-console.log('connection successfull')
-})
+// mongoose .connect(DB).then(() => {
+// console.log('connection successfull')
+// })
 
 const port = process.env.PORT || 5000;
 app.listen(port , () =>{
