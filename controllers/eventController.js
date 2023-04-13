@@ -27,7 +27,7 @@ exports.getevent= async (req, res) => {
   
       if (event == null) {
         res.status(404).json({
-          mas: "event not found",
+          message: "event not found",
           sucess: false,
         });
       }
@@ -37,7 +37,7 @@ exports.getevent= async (req, res) => {
         sucess: true,
       });
     } catch (err) {
-      res.status(500).json({ mas: "some server error" });
+      res.status(500).json({ message: "some server error" });
     }
   };
   exports.updateEvent = async (req, res) => {
@@ -46,7 +46,7 @@ exports.getevent= async (req, res) => {
       const event = await Event.updateOne({ _id: req.params.id }, newdata);
       res.status(204).json(event);
     } catch (err) {
-      res.status(500).json({ mas: "some server error" });
+      res.status(500).json({ message: "some server error" });
     }
   };
   
@@ -56,6 +56,6 @@ exports.getevent= async (req, res) => {
       const event = await Event.deleteOne({ _id: req.params.id });
       res.status(202).json(event);
     } catch (err) {
-      res.status(500).json({ mas: "some server error" });
+      res.status(500).json({ message: "some server error" });
     }
   };

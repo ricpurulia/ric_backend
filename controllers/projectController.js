@@ -19,7 +19,7 @@ exports.getAllProject = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(500).json({ mas: "some server error" });
+    res.status(500).json({ message: "some server error" });
   }
 };
 
@@ -30,7 +30,7 @@ exports.getProject = async (req, res) => {
 
     if (project == null) {
       res.status(404).json({
-        mas: "project not found",
+        message: "project not found",
         sucess: false,
       });
     }
@@ -41,7 +41,7 @@ exports.getProject = async (req, res) => {
       authProject: req.userId,
     });
   } catch (err) {
-    res.status(500).json({ mas: "some server error" });
+    res.status(500).json({ message: "some server error" });
   }
 };
 
@@ -63,7 +63,7 @@ exports.updateProject = async (req, res) => {
     const project = await Project.updateOne({ _id: req.params.id }, newdata);
     res.status(204).json(project);
   } catch (err) {
-    res.status(500).json({ mas: "some server error" });
+    res.status(500).json({ message: "some server error" });
   }
 };
 
@@ -73,6 +73,6 @@ exports.deleteProject = async (req, res) => {
     const project = await Project.deleteOne({ _id: req.params.id });
     res.status(202).json(project);
   } catch (err) {
-    res.status(500).json({ mas: "some server error" });
+    res.status(500).json({ message: "some server error" });
   }
 };

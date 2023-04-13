@@ -18,7 +18,7 @@ exports.getUser = async (req, res) => {
 
     if (user == null) {
       res.status(404).json({
-        mas: "user not found",
+        message: "user not found",
         sucess: false,
       });
     }

@@ -18,7 +18,7 @@ exports.getAllContact = async (req ,res)=>{
 exports.createContact = async(req , res)=>{
     const newContact = req.body;
     const contact = await Contact.create(newContact);
-    res.status(201).json(contact);
+    res.status(201).json({contact,succes:true});
 }
 
 exports.getContact= async (req, res) => {
@@ -27,7 +27,7 @@ exports.getContact= async (req, res) => {
   
       if (contact == null) {
         res.status(404).json({
-          mas: "Contact not found",
+          message: "Contact not found",
           sucess: false,
         });
       }
@@ -37,7 +37,7 @@ exports.getContact= async (req, res) => {
         sucess: true,
       });
     } catch (err) {
-      res.status(500).json({ mas: "some server error" });
+      res.status(500).json({ message: "some server error" });
     }
   };
   exports.updateContact = async (req, res) => {
@@ -46,7 +46,7 @@ exports.getContact= async (req, res) => {
       const contact = await Contact.updateOne({ _id: req.params.id }, newdata);
       res.status(204).json(contact);
     } catch (err) {
-      res.status(500).json({ mas: "some server error" });
+      res.status(500).json({ message: "some server error" });
     }
   };
   
@@ -56,6 +56,6 @@ exports.getContact= async (req, res) => {
       const contact = await Contact.deleteOne({ _id: req.params.id });
       res.status(202).json(contact);
     } catch (err) {
-      res.status(500).json({ mas: "some server error" });
+      res.status(500).json({ message: "some server error" });
     }
   };
