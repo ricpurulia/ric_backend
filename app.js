@@ -3,8 +3,8 @@ const morgan = require('morgan');
 const cors= require('cors')
 const projectRoute= require('./routes/projectRoute')
 const userRoute= require('./routes/userRoute')
-
-
+const eventRouter = require('./routes/eventRoute')
+const adminRouter = require('./routes/adminRoute')
 const app = express();
 
 
@@ -18,6 +18,8 @@ app.get('/', (req,res)=>{
 
 app.use('/api/allproject', projectRoute)
 app.use('/api/alluser' , userRoute)
+app.use('/api/getAllEvent',eventRouter)
+app.use('/api/getAllAdmin' ,adminRouter )
 
 
 
