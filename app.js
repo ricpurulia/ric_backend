@@ -23,7 +23,7 @@ app.use('/api/getAllAdmin' ,adminRouter )
 
 
 
-// 404 error page
+// 404 error pagegyug
 app.all('*', (req, res, next) => {
     next(`Can't find ${req.originalUrl} on this server!`, 404);
 });
